@@ -50,3 +50,5 @@ prediction = model.predict([[2, 2]])
 print("Prediction:", prediction)
 
 ```
+## Extra Note
+Online learning is useful for real-time data systems
