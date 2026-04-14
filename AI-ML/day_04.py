@@ -41,7 +41,7 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import accuracy_score
 
 # Load dataset
-data = load_iris(as_frame=False)
+iris = load_iris(as_frame=False)
 df = pd.DataFrame(data=iris["data"], columns=iris["feature_names"])
 df["target"] = iris["target"]
 
@@ -52,7 +52,10 @@ y = df["target"]
 # -----------------------------
 # SUPERVISED LEARNING (Classification)
 # -----------------------------
+from sklearn.preprocessing import StandardScaler
 
+scaler = StandardScaler()
+X = scaler.fit_transform(X)  # This scales your data to have a mean of 0
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
@@ -66,6 +69,11 @@ y_pred = model.predict(X_test)
 # Evaluate
 accuracy = accuracy_score(y_test, y_pred)
 print("Supervised Learning Accuracy:", accuracy)
+
+from sklearn.metrics import classification_report
+
+print("\nClassification Report:")
+print(classification_report(y_test, y_pred, target_names=iris["target_names"]))
 
 # -----------------------------
 # UNSUPERVISED LEARNING (Clustering)
