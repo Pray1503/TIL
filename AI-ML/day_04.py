@@ -1,5 +1,6 @@
-"""This script compares supervised and unsupervised learning."""
+"""This script compares supervised and unsupervised learning"""
 
+# pylint: disable=no-member
 # Day 04 - Machine Learning (Supervised + Unsupervised)
 
 # What I Learned:
