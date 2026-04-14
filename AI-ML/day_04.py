@@ -1,21 +1,23 @@
+"""This script compares supervised and unsupervised learning."""
+
 # Day 04 - Machine Learning (Supervised + Unsupervised)
 
 # What I Learned:
-# Machine Learning can be broadly divided into supervised and unsupervised learning. 
-# Supervised learning uses labeled data to train models, while unsupervised learning 
+# Machine Learning can be broadly divided into supervised and unsupervised learning.
+# Supervised learning uses labeled data to train models, while unsupervised learning
 # works on unlabeled data to find patterns or groupings.
 
 # Key Concept:
-# In supervised learning, the model learns from input-output pairs and predicts 
-# the correct output. In unsupervised learning, the model identifies hidden 
+# In supervised learning, the model learns from input-output pairs and predicts
+# the correct output. In unsupervised learning, the model identifies hidden
 # structures in data without predefined labels.
 
 # Supervised Learning:
-# I used Logistic Regression for classification. The dataset was split into 
+# I used Logistic Regression for classification. The dataset was split into
 # training and testing sets, and the model was evaluated using accuracy.
 
 # Unsupervised Learning:
-# I used KMeans clustering to group data into clusters based on similarity. 
+# I used KMeans clustering to group data into clusters based on similarity.
 # This does not require labeled data.
 
 # Important Points:
@@ -26,9 +28,9 @@
 # - Clustering helps in discovering patterns in data
 
 # Conclusion:
-# Understanding both supervised and unsupervised learning is essential 
+# Understanding both supervised and unsupervised learning is essential
 # for building machine learning models and solving real-world problems.
-    
+
 # Day 04 - Machine Learning (Supervised + Unsupervised)
 
 import pandas as pd
@@ -39,13 +41,13 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import accuracy_score
 
 # Load dataset
-data = load_iris()
-df = pd.DataFrame(data.data, columns=data.feature_names)
-df['target'] = data.target
+data = load_iris(as_frame=False)
+df = pd.DataFrame(data=iris["data"], columns=iris["feature_names"])
+df["target"] = iris["target"]
 
 # Features and labels
-X = df.drop('target', axis=1)
-y = df['target']
+X = df.drop("target", axis=1)
+y = df["target"]
 
 # -----------------------------
 # SUPERVISED LEARNING (Classification)
