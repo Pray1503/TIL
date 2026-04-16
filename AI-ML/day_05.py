@@ -43,8 +43,8 @@ from sklearn.metrics import accuracy_score
 # 1. Load and Structure Data Professionally
 data = load_iris()
 # Using the clean construction method from our previous discussion
-df = pd.DataFrame(data=data.data, columns=data.feature_names)
-df["target"] = data.target.ravel()
+df = pd.DataFrame(data=data["data"], columns=data["feature_names"])
+df["target"] = data["target"]
 
 # 2. Features and labels
 X = df.drop("target", axis=1)
