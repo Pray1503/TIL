@@ -36,8 +36,8 @@ import joblib
 # Train & Save Model
 # -----------------------------
 iris = load_iris()
-X = iris.data
-y = iris.target
+X = iris["data"]
+y = iris["target"]
 
 model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X, y)
@@ -66,7 +66,7 @@ input_data = pd.DataFrame([[sepal_length, sepal_width, petal_length, petal_width
 prediction = loaded_model.predict(input_data)
 
 # Map output
-target_names = iris.target_names
+target_names = iris["target_names"]
 result = target_names[prediction[0]]
 
 print("\nPredicted Flower Type:", result)
